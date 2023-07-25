@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dice Game</title>
+  <!-- Add this div next to the Dice Game title -->
+  <div id="player-tokens">Tokens: 100</div>
+
+  <style>
+      /* Styles for the game elements */
+      body {
+          font-family: Arial, sans-serif;
+      }
+
+      h1 {
+          text-align: center;
+      }
+
+      .dice-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 10px;
+      }
+
+      .dice-icon {
+          font-size: 40px;
+          padding: 10px;
+      }
+
+      #game-result {
+          text-align: center;
+          font-weight: bold;
+      }
+
+      /* Styles for the bet options */
+      .bet-options {
+          text-align: center;
+          margin-top: 10px;
+      }
+
+      .bet-options label {
+          margin-right: 10px;
+      }
+
+      .bet-options input[type="number"] {
+          width: 60px;
+          padding: 5px;
+      }
+
+      /* Additional styles for the total bets display */
+      .total-bets {
+          margin-top: 10px;
+          font-weight: bold;
+          text-align: center;
+      }
+  </style>
+</head>
+<body>
+<h1>Welcome to the Dice Game</h1>
+
+<div class="dice-container">
+  <div class="dice-icon" id="dice-1">&#9856;</div>
+  <div class="dice-icon" id="dice-2">&#9856;</div>
+</div>
+
+<div class="bet-options">
+  <label for="bets">Bet Amount:</label>
+  <input type="number" id="bets" min="1" value="1">
+</div>
+
+<!-- Add the buttons for betting on odd or even -->
+<div class="bet-options">
+  <label>
+    <input type="radio" name="bet" value="even">
+    Bet Even
+  </label>
+  <label>
+    <input type="radio" name="bet" value="odd">
+    Bet Odd
+  </label>
+</div>
+
+<input type="button" value="Place Bet!" id="roll-button">
+
+<div id="game-result"></div>
+
+<div class="total-bets">
+  Total Bets on Odd: <span id="total-bets-odd">0</span><br>
+  Total Bets on Even: <span id="total-bets-even">0</span>
+</div>
+
+<%= javascript_include_tag 'dice_game' %>
+</body>
+</html>
